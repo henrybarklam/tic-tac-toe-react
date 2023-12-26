@@ -1,7 +1,19 @@
 // This code creates a component. Must start with a capital letter 
 
 function Square({ value }){
-  return <button className="square">{value}</button>;
+  //You can add functions within functions
+  function handleClick(){
+    console.log('clicked!');
+  }
+
+  return (
+    <button 
+      className="square"
+      onClick={handleClick}
+    >
+      {value}
+    </button>
+  );
 }
 
 
