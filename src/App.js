@@ -11,6 +11,7 @@ import { useState } from 'react';
 // This code creates a component. Must start with a capital letter 
 function Square( {value, onSquareClick} ){
   return (
+    //The DOM <button> element's onClick attribute has a special meaning to React because it is a built-in component
     <button className="square" onClick={onSquareClick}>{value}</button>);
 }
 
@@ -20,17 +21,25 @@ export default function Board() {
 
   //The set function lets React know that the component has changed
   const [squares, setSquares] = useState(Array(9).fill(null));
-
+  const [xIsNext, setXIsNext] = useState(true)
 
   // JS supports closures which means that the inner function (handleClick) has access to variables and functions
   // defined in an outer function
 
   // This creates a copy of the squares array and then sets that array as the main array
-  
+
   function handleClick(i){
+
+  // Crucial for maintaining immutability - avoiding direct data mutation lets you keep previous versions of the data intact
     const nextSquares = squares.slice();
-    nextSquares[i] = "X"
+    if(xIsNext){
+      nextSquares[i] = "X"
+    }
+    else{
+      nextSquares[i] = "O"
+    }
     setSquares(nextSquares)
+    setXIsNext(!xIsNext)
   }
 
   return (
