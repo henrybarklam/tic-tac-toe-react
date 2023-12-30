@@ -24,6 +24,9 @@ export default function Board() {
 
   // JS supports closures which means that the inner function (handleClick) has access to variables and functions
   // defined in an outer function
+
+  // This creates a copy of the squares array and then sets that array as the main array
+  
   function handleClick(i){
     const nextSquares = squares.slice();
     nextSquares[i] = "X"
