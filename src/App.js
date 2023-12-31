@@ -30,6 +30,11 @@ export default function Board() {
 
   function handleClick(i){
 
+    // You want to return early if the square is already occupied
+    if (squares[i]){
+      return
+    }
+
   // Crucial for maintaining immutability - avoiding direct data mutation lets you keep previous versions of the data intact
     const nextSquares = squares.slice();
     if(xIsNext){
