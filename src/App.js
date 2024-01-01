@@ -47,6 +47,15 @@ export default function Board() {
     setXIsNext(!xIsNext)
   }
 
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = 'Winner: ' + winner;
+  } else {
+    // Cool little ternary
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+  }
+
   return (
 
     // Can only return a single element so need to wrap
