@@ -60,6 +60,7 @@ export default function Board() {
 
     // Can only return a single element so need to wrap
   <>
+    <div className="status">{status}</div>
     <div className="board-row">
       <Square value={squares[0]} onSquareClick={() => handleClick(0)}/>
       <Square value={squares[1]} onSquareClick={() => handleClick(1)}/>
