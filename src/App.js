@@ -1,5 +1,7 @@
 // React provides a special function called useState that you can call from  your component
 // to let it remember things
+
+// ! COME BACK TO TRY TO REWRITE FROM SCRATCH
 import { useState } from 'react';
 
 //? To collect data from multiple children, or to have two child components communicate with each other
